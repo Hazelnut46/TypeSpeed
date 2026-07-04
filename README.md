@@ -1,16 +1,32 @@
-# React + Vite
+# ⌨️ Type — Typing Speed Test
+ 
+A full-stack typing speed test app with real-time WPM/accuracy tracking, user accounts, and a global leaderboard.
+ 
+**Live demo:** 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+https://github.com/user-attachments/assets/cc300d06-d369-407a-aa1e-f062c72b539a
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ 
+---
+ 
+## Features
+ 
+- **Live typing test** — words stream continuously for 30 seconds, with real-time correct/incorrect highlighting
+- **WPM & accuracy calculation** — character-level accuracy tracking, industry-standard WPM formula
+- **User accounts** — sign up and log in with hashed passwords and JWT-based authentication
+- **Score history** — completed tests are automatically saved to your account when logged in
+- **Global leaderboard** — see the top scores across all users, pulled live from the database
+---
+ 
+ 
+## How It Works
+ 
+1. Words are generated from a word bank and streamed continuously as you type, so the test never "runs out" mid-session
+2. Each completed word is checked character-by-character against the target word to calculate accuracy
+3. WPM is calculated using the standard formula: `(correct characters / 5) / minutes elapsed`
+4. When the timer ends, if you're logged in, your score is automatically sent to the backend and saved
+5. The leaderboard route fetches the top 10 scores, sorted by WPM, with usernames populated from the linked user account
+---
+ 

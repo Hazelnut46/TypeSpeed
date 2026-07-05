@@ -5,7 +5,7 @@ function LeaderboardPage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/scores/leaderboard')
+    fetch(`${import.meta.env.VITE_API_URL}/api/scores/leaderboard`)
       .then((res) => res.json())
       .then((data) => {
         setScores(data)

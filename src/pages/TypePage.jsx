@@ -108,7 +108,7 @@ function TypePage() {
   if (!token) return
 
   try {
-    await fetch('http://localhost:5000/api/scores', {
+    await fetch(`${import.meta.env.VITE_API_URL}/api/scores`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
